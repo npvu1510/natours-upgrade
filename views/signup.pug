@@ -1,0 +1,25 @@
+extends base
+
+block content
+  main.main
+    .register-form
+      h2.heading-secondary.ma-bt-lg Sign up for an account
+      form.form.form--register(action='/register', method='post')
+        .form__group
+          label.form__label(for='name') Name
+          input#name.form__input(type='text', placeholder='Your Name', name='name', required)
+        .form__group
+          label.form__label(for='email') Email address
+          input#email.form__input(type='email', placeholder='you@example.com', name='email', required)
+        .form__group.ma-bt-md
+          label.form__label(for='password') Password
+          input#password.form__input(type='password', placeholder='••••••••', name='password', required, minlength='3')
+        .form__group.ma-bt-md
+          label.form__label(for='confirmPassword') Confirm Password
+          input#confirmPassword.form__input(type='password', placeholder='••••••••', name='confirmPassword', required, minlength='3')
+        .form__group
+          button.btn.btn--green.btn--register(type='submit') Sign Up
+        //- .form__group
+        //-   button.btn.btn--google(type='button') Sign Up with Google
+        .form__group
+          a.form__login.form__forgot-password(href='/login') Already have an account? Log in

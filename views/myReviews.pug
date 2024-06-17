@@ -1,0 +1,26 @@
+extends base
+
+
+block content
+  main.main
+    h2.heading-secondary My reviews
+    each review in myReviews
+      section.section-cta.section-cta-review(data-review-id=review._id)
+        .cta.cta-review
+          a.edit-review-button(href="#" style="position: absolute; top: 10px; right: 10px; color: #777; font-size: 1.5rem;")
+            i.fa.fa-edit
+
+          .review-userInfo-section
+            .cta__img--cover
+              img(src=`/img/tours/${review.tour.imageCover}`) 
+            h6.reviews__user= review.createdAt.toLocaleString('en-us', {day:'numeric', month: 'long', year: 'numeric'})
+
+          .review-section
+            a(href=`/tour/${review.tour.slug}`)
+              h2.heading-secondary= review.tour.name
+            div.review
+              p.reviews__text= review.review
+              div.rating
+                each star in [1, 2, 3, 4, 5]
+                  svg.reviews__star(class=(star <= review.rating ? 'reviews__star--active' : 'reviews__star--inactive'))
+                            use(xlink:href='/img/icons.svg#icon-star')    

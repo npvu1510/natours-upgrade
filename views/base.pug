@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    block head
+      meta(charset='UTF-8')
+      meta(name='viewport' content='width=device-width, initial-scale=1.0')
+      meta(name="google-signin-client_id", content="YOUR_CLIENT_ID.apps.googleusercontent.com")
+
+      link(rel='stylesheet' href='/css/style.css')
+      link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+      script(src="https://apis.google.com/js/platform.js" async defer)
+      //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js')
+      title Natours | #{title}
+  body 
+    include _header
+    
+    block content
+      h1 This is placeholder for block content
+
+    include _footer
+    
+    //- Global Modal
+    .modal__overlay.hidden
+    div#global-modal.hidden
+      .modal__content
+        span.modal__close &times;
+        .modal__body
+          // Nội dung của modal sẽ được thêm vào đây bằng JavaScript
+    //- script(type="module" src="/js/index.js")
+    script(type="module" src="/js/bundled/index.js")
