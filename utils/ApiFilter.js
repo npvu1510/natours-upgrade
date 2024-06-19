@@ -1,4 +1,5 @@
-import { model } from 'mongoose';
+// import { model } from 'mongoose';
+import AppError from './AppError.js';
 
 class ApiFilter {
   constructor(reqQuery, model, countDocuments, filter) {
@@ -52,7 +53,9 @@ class ApiFilter {
 
     if (skip < this.countDocuments)
       this.queryRes = this.queryRes.skip(skip).limit(limit);
-    else this.error = new Error('Page not found');
+    else {
+      throw new AppError(404, 'Page not found');
+    }
 
     return this;
   }

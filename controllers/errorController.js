@@ -60,8 +60,13 @@ const responseOnDevelopment = (err, req, res) => {
 
 const responseOnProduction = (err, req, res) => {
   console.log('🚫🚫 Error on production: ' + err);
+  console.log(err);
+  console.log(req.originalUrl.startsWith('/api/'));
 
-  if (req.originalUrl.startsWith('/api/')) {
+  if (
+    req.originalUrl.startsWith('/api/') ||
+    req.originalUrl.startsWith('/stripe/get-checkout-session')
+  ) {
     if (err.isOperational) {
       return res
         .status(err.statusCode)

@@ -39,15 +39,26 @@ const protectedApiRoute = catchAsync(async (req, res, next) => {
       payload = jwt.decode(refreshToken);
       const newToken = await signToken({ _id: payload._id }, res, false);
       console.log(`new token: ${req.cookies.jwt}`);
-    }
+      console.log(payload);
+    } else if (err.name === 'JsonWebTokenError')
+      return next(new AppError(401, 'You are not login!'));
+    else return next(err);
   } finally {
-    _id = payload._id;
-    email = payload.email;
-    iat = payload.iat;
+    if (payload) {
+      _id = payload._id;
+      email = payload.email;
+      iat = payload.iat;
+    }
   }
+  // console.log(payload);
+  // _id = payload._id;
+  // email = payload.email;
+  // iat = payload.iat;
 
   // Kiểm tra user với token đó còn tồn tại không ?
   const user = await User.findOne({ $or: [{ _id }, { email }] });
+  console.log(user);
+
   if (!user)
     return next(
       new AppError(401, 'User is no longer available. Please login again !'),

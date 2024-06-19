@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
 import redisClient from '../config/redisClient.js';
-import AppError from './AppError.js';
+// import AppError from './AppError.js';
 
 const signToken = async (payload, res, isRefresh = false) => {
   const secretKey = !isRefresh

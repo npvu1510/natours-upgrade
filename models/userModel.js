@@ -83,7 +83,7 @@ userSchema.pre('save', async function (next) {
   this.confirmPassword = null;
 
   this.lastPasswordChanged = Date.now() - 1000;
-  console.log(`PASSWORD CHANGED AT: ${this.lastPasswordChanged.getTime()}`);
+  // console.log(`PASSWORD CHANGED AT: ${this.lastPasswordChanged.getTime()}`);
   next();
 });
 
@@ -95,7 +95,7 @@ userSchema.pre(/^find/, function (next) {
 
 // METHODS
 userSchema.methods.isPasswordCorrect = async function (inputPassword) {
-  return await bcrypt.compare(inputPassword, this.password);
+  return await bcrypt.compare(`${inputPassword}`, this.password);
 };
 
 userSchema.methods.isPasswordChangedAfter = function (time) {

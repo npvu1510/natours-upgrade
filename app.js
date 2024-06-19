@@ -68,7 +68,6 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'", 'https:', 'localhost:'],
-
         scriptSrc: ["'self'", 'https:'],
         imgSrc: ["'self'", 'https:', 'data:'],
       },
@@ -76,8 +75,6 @@ app.use(
   }),
 );
 
-app.use(mongoSanitize());
-app.use(xss());
 app.use(
   hpp({
     whitelist: ['duration', 'difficulty', 'ratingsAverage'],
@@ -95,6 +92,8 @@ app.use('/stripe', stripeRouter);
 
 // NORMAL ROUTERS
 app.use(express.json({ limit: '10kb' }));
+app.use(mongoSanitize());
+app.use(xss());
 
 app.use('/', viewRouter);
 app.use('/api/tours', tourRouter);

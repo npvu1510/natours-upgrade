@@ -111,7 +111,8 @@ block content
                 button.btn.btn--green.span-all-rows(data-tour-id=`${tour._id}`) Submit
           else
             div.review
-              p.reviews__text= myReview.review
+              //- p.reviews__text= myReview.review
+              div.reviews__text= myReview.review
               div.rating
                 each star in [1, 2, 3, 4, 5]
                   svg.reviews__star(class=(star <= myReview.rating ? 'reviews__star--active' : 'reviews__star--inactive'))
