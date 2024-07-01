@@ -63,43 +63,25 @@
    ```sh
    npm install
 
-3. Set up environment
-Create a `.env` file in the root directory and add the necessary environment variables. An example `.env` file:
-```env
-PORT = 5000
-NODE_ENV = development
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add the necessary environment variables. An example `.env` file:
+   ```env
+   NODE_ENV = development
+   PORT = 5000
 
-MONGO_URI = ...
+   # MONGO
+   MONGO_URI = your_mongodb_uri
 
-# ACCESS TOKEN
-JWT_SECRET_KEY = ...
-JWT_EXPIRES_IN = 10s
+   # TOKEN
+   SECRET_KEY = your_secret_key
+   REFRESH_SECRET_KEY = your_refresh_secret_key
 
-# REFRESH TOKEN
-JWT_SECRET_KEY_FOR_REFRESH = ...
-JWT_EXPIRES_IN_FOR_REFRESH = 1d
-REDIS_REFRESH_TOKEN_EXPIRE = 604800
-
-# RESET PASSWORD
-RESET_PASSWORD_TOKEN_EXPIRE_AT = 900000
-
-EMAIL_ADDRESS = ... (chỗ này điền email nguồn dùng để gửi các email xác nhận)
-
-# OAuth
-CLIENT_ID=...
-CLIENT_SECRET=...
-REDIRECT_URI=https://developers.google.com/oauthplayground
-REFRESH_TOKEN=...
-
-# GOOGLE SIGN IN
-AUTH_CLIENT_ID=...
-AUTH_CLIENT_SECRET=...
-AUTH_REDIRECT_URI=http://localhost:5000/api/auth/google/callback
-
-# STRIPE
-STRIPE_PUBLISHABLE_KEY = ...
-STRIPE_SECRET_KEY = ...
-STRIPE_WEBHOOK_SECRET = ...
+   # PAYPAL
+   PAYPAL_URL = https://api-m.sandbox.paypal.com
+   PAYPAL_GET_TOKEN_ENDPOINT = /v1/oauth2/token
+   PAYPAL_SHOW_ORDER_ENDPOINT = /v2/checkout/orders
+   PAYPAL_CLIENT_ID = your_paypal_client_id
+   PAYPAL_SECRET_KEY = your_paypal_secret_key
 
 4. Start development server:
    ```sh
