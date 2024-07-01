@@ -45,7 +45,7 @@ Demo and explain: https://youtu.be/ljyVbjtQVG8
 ![Home Page](./screenshots/home.png)
 
 ### Tour Detail Page
-![Tour Detail Page](./screenshots/toud_detail.png)
+![Tour Detail Page](./screenshots/tour_detail.png)
 
 ### Review Page
 ![Review Page](./screenshots/review.png)
