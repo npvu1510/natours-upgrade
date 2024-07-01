@@ -96,34 +96,46 @@ The application has different error handling mechanisms for development and prod
 ## API Endpoints
 
 ### Auth
-- Register: `POST /api/v1/users/signup`
-- Login: `POST /api/v1/users/login`
-- Logout: `GET /api/v1/users/logout`
-- Forgot Password: `POST /api/v1/users/forgotPassword`
-- Reset Password: `PATCH /api/v1/users/resetPassword/:token`
-- Update Profile: `PATCH /api/v1/users/updateMe`
-- Update Password: `PATCH /api/v1/users/updateMyPassword`
+- Register: `POST /api/auth/register`
+- Login: `POST /api/auth/login`
+- Logout: `GET /api/auth/logout`
+- Forgot Password: `POST /api/auth/forgot-password`
+- Reset Password: `POST /api/auth/reset-password/:token`
 
+### User
+#### Profile
+- Get Profile: `GET /api/users/get-profile`
+- Update Profile: `PATCH /api/users/update-profile`
+- Update Password: `PATCH /api/users/update-profile-password`
+- Disable Account: `DELETE /api/users/disable-account`
+#### Admin
+- Get Users: `GET /api/users`
+- Get User: `GET /api/users/:id`
+- Update User: `PATCH /api/users/:id`
+- Delete User: `DELETE /api/users/:id`
+#### Booking
+- Get bookings by User: `GET /api/users/:userId/bookings` (Admin)
+  
 ### Tours
-- Get All Tours: `GET /api/v1/tours`
-- Get Tour: `GET /api/v1/tours/:id`
-- Create Tour: `POST /api/v1/tours` (Admin)
-- Update Tour: `PATCH /api/v1/tours/:id` (Admin)
-- Delete Tour: `DELETE /api/v1/tours/:id` (Admin)
+- Get All Tours: `GET /api/tours`
+- Get Tour: `GET /api/tours/:id`
+- Create Tour: `POST /api/tours` (Admin)
+- Update Tour: `PATCH /api/tours/:id` (Admin)
+- Delete Tour: `DELETE /api/tours/:id` (Admin)
 
 ### Bookings
-- Create Booking: `POST /api/v1/bookings`
-- Get All Bookings: `GET /api/v1/bookings`
-- Get Booking: `GET /api/v1/bookings/:id`
-- Update Booking: `PATCH /api/v1/bookings/:id`
-- Delete Booking: `DELETE /api/v1/bookings/:id`
+- Create Booking: `POST /api/bookings`
+- Get All Bookings: `GET /api/bookings`
+- Get Booking: `GET /api/bookings/:id`
+- Update Booking: `PATCH /api/bookings/:id`
+- Delete Booking: `DELETE /api/bookings/:id`
 
 ### Reviews
-- Get All Reviews: `GET /api/v1/reviews`
-- Get Review: `GET /api/v1/reviews/:id`
-- Create Review: `POST /api/v1/reviews`
-- Update Review: `PATCH /api/v1/reviews/:id`
-- Delete Review: `DELETE /api/v1/reviews/:id`
+- Get All Reviews: `GET /api/reviews`
+- Get Review: `GET /api/reviews/:id`
+- Create Review: `POST /api/reviews`
+- Update Review: `PATCH /api/reviews/:id`
+- Delete Review: `DELETE /api/reviews/:id`
 
 
 ## Contribution
