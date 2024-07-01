@@ -101,9 +101,9 @@
     STRIPE_SECRET_KEY = ...
     STRIPE_WEBHOOK_SECRET = ...
     
-    4. Start development server:
-    ```sh
-    npm run start:dev
+  4. Start development server:
+  ```sh
+  npm run start:dev
 
 ## Project Structure
 ```
