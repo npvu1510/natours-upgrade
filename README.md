@@ -99,7 +99,7 @@ The application has different error handling mechanisms for development and prod
 - **Development:** Detailed error messages and stack traces are shown for easier debugging.
 - **Production:** Generic error messages are shown to the user, while detailed error logs are stored for debugging purposes.
 
-## Usage
+## API Endpoints
 
 ### Auth
 - Register: `POST /api/v1/users/signup`
