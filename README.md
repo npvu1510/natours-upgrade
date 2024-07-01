@@ -3,7 +3,7 @@
 # Natours
 
 - A comprehensive tour booking application built with Node.js, Express, and MongoDB. This project includes features such as token-based authentication, email verification, password reset, tour booking, Stripe payments, and more.
-- Demo and explain: https://youtu.be/ljyVbjtQVG8
+- [Demo and explain](https://youtu.be/ljyVbjtQVG8)
 
 ## Features
 
@@ -63,7 +63,45 @@
    ```sh
    npm install
 
-3. Start development server:
+3. Set up environment
+Create a `.env` file in the root directory and add the necessary environment variables. An example `.env` file:
+```env
+PORT = 5000
+NODE_ENV = development
+
+MONGO_URI = ...
+
+# ACCESS TOKEN
+JWT_SECRET_KEY = ...
+JWT_EXPIRES_IN = 10s
+
+# REFRESH TOKEN
+JWT_SECRET_KEY_FOR_REFRESH = ...
+JWT_EXPIRES_IN_FOR_REFRESH = 1d
+REDIS_REFRESH_TOKEN_EXPIRE = 604800
+
+# RESET PASSWORD
+RESET_PASSWORD_TOKEN_EXPIRE_AT = 900000
+
+EMAIL_ADDRESS = ... (chỗ này điền email nguồn dùng để gửi các email xác nhận)
+
+# OAuth
+CLIENT_ID=...
+CLIENT_SECRET=...
+REDIRECT_URI=https://developers.google.com/oauthplayground
+REFRESH_TOKEN=...
+
+# GOOGLE SIGN IN
+AUTH_CLIENT_ID=...
+AUTH_CLIENT_SECRET=...
+AUTH_REDIRECT_URI=http://localhost:5000/api/auth/google/callback
+
+# STRIPE
+STRIPE_PUBLISHABLE_KEY = ...
+STRIPE_SECRET_KEY = ...
+STRIPE_WEBHOOK_SECRET = ...
+
+4. Start development server:
    ```sh
    npm run start:dev
 
