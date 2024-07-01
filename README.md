@@ -86,7 +86,7 @@
 
 4. Start development server:
    ```sh
-   npm run server
+   npm run start:dev
 
 ## Error Handling
 
