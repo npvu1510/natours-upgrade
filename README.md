@@ -53,44 +53,6 @@
 ### Checkout Page
 ![Review Page](./screenshots/checkout.png)
 
-## Project Setup
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/username/natours.git
-   
-2. Install dependencies:
-   ```sh
-   npm install
-    
-4. Start development server:
-  ```sh
-  npm run start:dev
-
-## Project Structure
-```
-natours/
-├── config/
-├── controllers/
-├── dev-data/
-├── middlewares/
-├── models/
-├── node_modules/
-├── public/
-├── routes/
-├── utils/
-├── views/
-├── .env
-├── .eslintrc.json
-├── .gitignore
-├── .prettierrc
-├── app.js
-├── index.html
-├── package-lock.json
-├── package.json
-├── seeder.js
-└── server.js
-```
 
 ## Error Handling
 
