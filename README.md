@@ -2,8 +2,8 @@
 
 # Natours
 
-A comprehensive tour booking application built with Node.js, Express, and MongoDB. This project includes features such as token-based authentication, email verification, password reset, tour booking, Stripe payments, and more.
-Demo and explain: https://youtu.be/ljyVbjtQVG8
+- A comprehensive tour booking application built with Node.js, Express, and MongoDB. This project includes features such as token-based authentication, email verification, password reset, tour booking, Stripe payments, and more.
+- Demo and explain: https://youtu.be/ljyVbjtQVG8
 
 ## Features
 
